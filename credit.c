@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <cs50.h>
 
 int main(void) {
     long long card, CARD;
@@ -7,7 +8,7 @@ int main(void) {
     int firstDigit;
 
     do {
-        scanf("%lld", &card);
+        card = get_long_long("Prompt: ");
     }
     while (card <= 0);
 
@@ -36,13 +37,11 @@ int main(void) {
         card /= 10;
     }
 
-    int visa, masterCard, amex = 0;
-
-    printf("Your checksum is %d. ", checkSum);
+    int visa = 0;
+    int masterCard = 0;
+    int amex = 0;
 
     if (checkSum % 10 == 0) {
-        printf("Congratulations! Your card is valid!\n");
-
         if (counter == 13) {
             visa = 1;
         } else if (counter == 15) {
@@ -55,16 +54,16 @@ int main(void) {
             } 
         }
     } else {
-        printf("Sorry, you've entered an invalid card.\n");
+        printf("INVALID\n");
     }
 
     if (visa) {
-        printf("Your card company is Visa.\n");
+        printf("VISA\n");
     } else if (amex) {
-        printf("Your card company is Amex.\n");
+        printf("AMEX\n");
     } else if (masterCard) {
-        printf("Your card company is MasterCard.\n");
-    } else {
-        printf("Your card company is unknown.\n");
+        printf("MASTERCARD\n");
     }
+
+    return 0;
 }
