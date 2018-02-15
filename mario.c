@@ -39,10 +39,6 @@ int main(void)
             {
                 printf("%c", hash);
             }
-            else if (j > i)
-            {
-                printf("%c", space);
-            }
         }
 
         printf("\n");
