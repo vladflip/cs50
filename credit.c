@@ -6,7 +6,7 @@ int main(void)
     long long card, CARD;
     int checkSum = 0;
     int counter = 0;
-    int firstDigit;
+    int firstNumber = 0;
 
     do
     {
@@ -22,9 +22,9 @@ int main(void)
         counter++;
         int lastDigit = card % 10;
 
-        if (lastDigit / 10 == 0)
+        if (card / 100 == 0 && firstNumber == 0)
         {
-            firstDigit = lastDigit;
+            firstNumber = card;
         }
 
         // odd
@@ -58,17 +58,17 @@ int main(void)
         {
             visa = 1;
         }
-        else if (counter == 15)
+        else if (counter == 15 && (firstNumber == 34 || firstNumber == 37))
         {
             amex = 1;
         }
         else if (counter == 16)
         {
-            if (firstDigit == 4)
+            if (firstNumber / 10 == 4)
             {
                 visa = 1;
             }
-            else if (firstDigit == 5)
+            else if (firstNumber >= 51 && firstNumber <= 55)
             {
                 masterCard = 1;
             }
