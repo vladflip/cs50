@@ -4,7 +4,7 @@
 int main(void)
 {
     long long card, CARD;
-    int checkSum;
+    int checkSum = 0;
     int counter = 0;
     int firstDigit;
 
