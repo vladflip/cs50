@@ -50,9 +50,9 @@ int main(void) {
         } else if (counter == 16) {
             if (firstDigit == 4) {
                 visa = 1;
-            } else {
+            } else if (firstDigit == 5) {
                 masterCard = 1;
-            }
+            } 
         }
     } else {
         printf("Sorry, you've entered an invalid card.\n");
@@ -64,5 +64,7 @@ int main(void) {
         printf("Your card company is Amex.\n");
     } else if (masterCard) {
         printf("Your card company is MasterCard.\n");
+    } else {
+        printf("Your card company is unknown.\n");
     }
 }
