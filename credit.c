@@ -59,10 +59,10 @@ int main(void) {
     }
 
     if (visa) {
-        printf("Your card company is Visa.");
+        printf("Your card company is Visa.\n");
     } else if (amex) {
-        printf("Your card company is Amex.");
+        printf("Your card company is Amex.\n");
     } else if (masterCard) {
-        printf("Your card company is MasterCard.");
+        printf("Your card company is MasterCard.\n");
     }
 }
