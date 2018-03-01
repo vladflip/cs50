@@ -44,16 +44,16 @@ int frequency(string note)
 
     if (letter != 'A')
     {
-        frequency = (float)frequency * pow((float)2, (float)semitones / (float)12);
+        frequency = frequency * pow((float)2, (float)semitones / (float)12);
     }
 
     if (sharp)
     {
-        frequency = (float)frequency * semitone;
+        frequency = frequency * semitone;
     }
     else if (flat)
     {
-        frequency = (float)frequency / semitone;
+        frequency = frequency / semitone;
     }
 
     return (int)round(frequency);
